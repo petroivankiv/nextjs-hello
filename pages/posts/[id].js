@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next';
 
 import { getAllPostIds, getPostData } from '../../lib/posts';
 import Layout from '../../components/layout/layout';
