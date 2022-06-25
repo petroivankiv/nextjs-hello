@@ -37,13 +37,12 @@ export default function Layout({ children, home }: Props) {
           <>
             <Image
               priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
+              src="/images/home.jpg"
+              className={styles.image}
+              height={350}
+              width={1000}
               alt={name}
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
         )}
       </header>
