@@ -18,7 +18,7 @@ type Props = {
 export default function List({ items, title }: Props) {
   return (
     <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-      <h2 className={utilStyles.headingLg}>{title}</h2>
+      <h2 className={`${utilStyles.headingLg} font-semibold`}>{title}</h2>
       <ul className={utilStyles.list}>
         {items.map(({ id, date, title }) => (
           <li className={utilStyles.listItem} key={id}>
