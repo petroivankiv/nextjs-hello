@@ -86,7 +86,7 @@ export default function Example() {
                         <div className="px-5 py-5 bg-gray-50 sm:px-8 sm:py-8">
                           <div>
                             <h3 className="text-sm tracking-wide font-medium text-gray-500 uppercase">
-                              Recent Posts
+                              Top Rated Posts
                             </h3>
                             <ul role="list" className="mt-4 space-y-4">
                               {recentPosts.map((post) => (
