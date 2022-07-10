@@ -1,10 +1,8 @@
 import Head from 'next/head';
-import Image from 'next/image';
-
-import styles from './layout.module.scss';
-import utilStyles from '../../styles/utils.module.scss';
-import Link from 'next/link';
 import { ReactNode } from 'react';
+
+import Header from '../header';
+import Welcome from '../welcome';
 
 const name = 'Your Name';
 export const siteTitle = 'Next.js Hello';
@@ -16,7 +14,7 @@ type Props = {
 
 export default function Layout({ children, home }: Props) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -32,28 +30,11 @@ export default function Layout({ children, home }: Props) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
-        {home && (
-          <>
-            <Image
-              priority
-              src="/images/home.jpg"
-              className={styles.image}
-              height={350}
-              width={1000}
-              alt={name}
-            />
-          </>
-        )}
-      </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
+      <Header />
+      {home && <Welcome />}
+      <div className="max-w-xl px-4 pb-4 mx-auto">
+        <main>{children}</main>
+      </div>
     </div>
   );
 }

@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next';
+import Link from 'next/link';
+
+import Layout from 'components/layout';
+import Date from 'components/date';
 
 import { getAllPostIds, getPostData } from '../../lib/posts';
-import Layout from '../../components/layout/layout';
-import Date from '../../components/date/date';
 import utilStyles from '../../styles/utils.module.scss';
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -45,6 +47,13 @@ export default function Post({
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
+      <footer>
+        <div className="mt-4">
+          <Link href="/">
+            <a>← Back to home</a>
+          </Link>
+        </div>
+      </footer>
     </Layout>
   );
 }

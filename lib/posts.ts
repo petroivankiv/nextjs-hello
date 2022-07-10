@@ -38,6 +38,10 @@ export function getSortedPostsData() {
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
+export function getLatestPosts() {
+  return getSortedPostsData().slice(0, 5);
+}
+
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory);
 
