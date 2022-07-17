@@ -1,13 +1,12 @@
 import Link from 'next/link';
 
-import Date from 'components/date';
-
-import utilStyles from '../../styles/utils.module.scss';
+import PostInfo from 'components/post-info';
 
 export interface Item {
   date: string;
   title: string;
   id: string;
+  topic: string;
 }
 
 type Props = {
@@ -17,18 +16,16 @@ type Props = {
 
 export default function List({ items, title }: Props) {
   return (
-    <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-      <h2 className={`${utilStyles.headingLg} font-semibold`}>{title}</h2>
-      <ul className={utilStyles.list}>
-        {items.map(({ id, date, title }) => (
-          <li className={utilStyles.listItem} key={id}>
-            <Link href={`/posts/${id}`}>
-              <a>{title}</a>
+    <section className="leading-normal pt-1 text-xl">
+      <h2 className="text-3xl leading-normal font-semibold mt-2">{title}</h2>
+      <ul className="list-none m-0 p-0">
+        {items.map((item) => (
+          <li className="my-4" key={item.id}>
+            <Link href={`/posts/${item.id}`}>
+              <a>{item.title}</a>
             </Link>
             <br />
-            <small className={utilStyles.lightText}>
-              <Date dateString={date} />
-            </small>
+            <PostInfo post={item} />
           </li>
         ))}
       </ul>

@@ -10,6 +10,7 @@ type PostData = {
   date: string;
   title: string;
   id: string;
+  topic: string;
   contentHtml?: string;
 };
 

@@ -24,6 +24,7 @@ export default function Home({
   latestsPosts: {
     date: string;
     title: string;
+    topic: string;
     id: string;
   }[];
 }) {
