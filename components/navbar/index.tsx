@@ -16,8 +16,8 @@ type Props = {
 export default function Navbar({ signInEnabled }: Props) {
   return (
     <Popover className="relative bg-white">
-      <div className="w-full mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+      <div className="w-full mx-auto px-4 sm:px-6 border-b-2 border-gray-100">
+        <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start shrink-0">
             <a href="#">
               <span className="sr-only">Workflow</span>
