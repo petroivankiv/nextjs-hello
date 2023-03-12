@@ -17,8 +17,8 @@ export default function Navbar({ signInEnabled }: Props) {
   return (
     <Popover className="relative bg-white">
       <div className="w-full mx-auto px-4 sm:px-6 border-b-2 border-gray-100">
-        <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
-          <div className="flex justify-start shrink-0">
+        <div className="flex justify-between items-center py-4 md:justify-center md:space-x-10">
+          <div className="flex justify-start shrink-0 absolute left-2">
             <a href="#">
               <span className="sr-only">Workflow</span>
               <img
@@ -34,14 +34,14 @@ export default function Navbar({ signInEnabled }: Props) {
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
-          <Popover.Group as="nav" className="hidden md:flex space-x-10 mr-auto">
+          <Popover.Group as="nav" className="hidden md:flex mr-auto">
             {MENU_CONFIG.map((menuItem) => {
               if (!menuItem.children) {
                 return (
                   <a
                     key={menuItem.path}
                     href={menuItem.path}
-                    className="text-base font-medium text-gray-500 hover:text-gray-900"
+                    className="bg-transparent hover:bg-gray-100 text-gray-500 font-semibold py-2 px-4 hover:no-underline"
                   >
                     {menuItem.name}
                   </a>

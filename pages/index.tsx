@@ -1,12 +1,10 @@
 import Head from 'next/head';
 import { GetStaticProps } from 'next';
 
-import List from 'components/list';
 import Layout, { siteTitle } from 'components/layout';
 
 import { getLatestPosts } from '../lib/posts';
-
-const name = 'Your Name';
+import Cards from 'components/cards';
 
 export const getStaticProps: GetStaticProps = async () => {
   const latestsPosts = getLatestPosts();
@@ -33,7 +31,7 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <List items={latestsPosts} title="Latest posts" />
+      <Cards items={latestsPosts} />
     </Layout>
   );
 }

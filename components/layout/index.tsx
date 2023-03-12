@@ -4,7 +4,6 @@ import { ReactNode } from 'react';
 import Header from '../header';
 import Welcome from '../welcome';
 
-const name = 'Your Name';
 export const siteTitle = 'Next.js Hello';
 
 type Props = {
@@ -32,7 +31,7 @@ export default function Layout({ children, home }: Props) {
       </Head>
       <Header />
       {home && <Welcome />}
-      <div className="max-w-xl px-4 pb-4 mx-auto">
+      <div className={`${home ? 'w-3/4' : 'w-1/2'} px-4 pb-4 mx-auto`}>
         <main>{children}</main>
       </div>
     </div>
